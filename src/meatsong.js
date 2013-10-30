@@ -3,7 +3,7 @@
 // This is a bookmarklet to speak the entries added to chat.meatspac.es
 // made by 6a68 with <3 for the internets
 // Apache2 license. 
-// PRs welcome --> github.com/6a68/meatsong.js
+// ideas/comments welcome --> https://gist.github.com/6a68/7239724
 
 var PATH = 'https://rawgithub.com/6a68/6a68.github.com/meatsong/src/';
 var audiodiv = document.createElement('div')
