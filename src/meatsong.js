@@ -6,6 +6,9 @@
 // PRs welcome --> github.com/6a68/meatsong.js
 
 var PATH = 'https://rawgithub.com/6a68/6a68.github.com/meatsong/src/';
+var audiodiv = document.createElement('div')
+audiodiv.id = 'audio';
+document.body.appendChild(audiodiv);
 document.body.appendChild(document.createElement('script')).src=PATH+'speakGenerator.js';
 document.body.appendChild(document.createElement('script')).src=PATH+'speakClient.js';
 
