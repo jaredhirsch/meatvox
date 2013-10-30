@@ -5,7 +5,9 @@
 // Apache2 license. 
 // PRs welcome --> github.com/6a68/meatsong.js
 
-document.body.appendChild(document.createElement('script')).src='https://rawgithub.com/6a68/6a68.github.com/master/src/speakClient.js';
+var PATH = 'https://rawgithub.com/6a68/6a68.github.com/meatsong/src/';
+document.body.appendChild(document.createElement('script')).src=PATH+'speakGenerator.js';
+document.body.appendChild(document.createElement('script')).src=PATH+'speakClient.js';
 
 // use MutationObserver to watch for new <li> elements
 // when one appears, speak it.
@@ -14,7 +16,7 @@ var observer = new MutationObserver(function(mutations) {
   mutations.forEach(function(mutation) {
     // mutations fire when <li>s are removed, so guard against that.
     // multiple speakers collide, so just speak the 0th.
-    mutation.addedNodes && speak(mutation.addedNodes[0].textContent);
+    mutation.addedNodes && speak(mutation.addedNodes[0].textContent, {noWorker:true});
   });
 });
 observer.observe(document.querySelector('div.chats ul'), {childList: true});
