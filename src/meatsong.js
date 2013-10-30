@@ -5,7 +5,7 @@
 // Apache2 license. 
 // PRs welcome --> github.com/6a68/meatsong.js
 
-document.body.appendChild(document.createElement('script')).src='http://6a68.net/src/speakClient.js';
+document.body.appendChild(document.createElement('script')).src='https://rawgithub.com/6a68/6a68.github.com/master/src/speakClient.js';
 
 // use MutationObserver to watch for new <li> elements
 // when one appears, speak it.
