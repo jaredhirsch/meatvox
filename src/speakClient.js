@@ -1,6 +1,6 @@
 var speakWorker;
 try {
-  speakWorker = new Worker('https://rawgithub.com/6a68/6a68.github.com/meatsong/src/speakWorker.js');
+  speakWorker = new Worker('https://meatvox.com/speakWorker.js');
 } catch(e) {
   console.log('speak.js warning: no worker support');
 }
