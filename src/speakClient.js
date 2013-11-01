@@ -1,6 +1,6 @@
 var speakWorker;
 try {
-  speakWorker = new Worker('speakWorker.js');
+  speakWorker = new Worker('https://meatvox.s3.amazonaws.com/speakWorker.js');
 } catch(e) {
   console.log('speak.js warning: no worker support');
 }
