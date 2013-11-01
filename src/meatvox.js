@@ -1,4 +1,4 @@
-// meatsong v0.1
+// meatvox v0.2
 //
 // This is a bookmarklet to speak the entries added to chat.meatspac.es
 // made by 6a68 with <3 for the internets
