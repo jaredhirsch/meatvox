@@ -1,10 +1,12 @@
 ## MEATVOX: Text-to-speech for https://chat.meatspac.es
 
+Note: due to laziness I'm serving the bookmarklet off an S3 bucket: **meatvox.s3.amazonaws.com**.
+
 ### Instructions:
 
 1. create a bookmarklet with the following contents:
 ```
-javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://meatvox.com/meatvox.js';})();
+javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://meatvox.s3.amazonaws.com/meatvox.js';})();
 ```
 2. load chat.meatspac.es
 3. when the page settles, click your button and behold roboty delight.

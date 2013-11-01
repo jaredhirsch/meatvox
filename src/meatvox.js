@@ -5,12 +5,11 @@
 // Apache2 license.
 // ideas/comments welcome --> https://github.com/6a68/meatvox
 
-var PATH = 'https://meatvox.com/',
-  audiodiv = document.createElement('div');
+var audiodiv = document.createElement('div');
 audiodiv.id = 'audio';
 document.body.appendChild(audiodiv);
-document.body.appendChild(document.createElement('script')).src=PATH+'speakGenerator.js';
-document.body.appendChild(document.createElement('script')).src=PATH+'speakClient.js';
+document.body.appendChild(document.createElement('script')).src='speakGenerator.js';
+document.body.appendChild(document.createElement('script')).src='speakClient.js';
 
 // use MutationObserver to watch for new <li> elements
 // when one appears, speak it.
