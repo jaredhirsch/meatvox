@@ -32,13 +32,15 @@
 <a name="meatvox-text-to-speech-for-httpschatmeatspaces" class="anchor" href="#meatvox-text-to-speech-for-httpschatmeatspaces"><span class="octicon octicon-link"></span></a>MEATVOX: Text-to-speech for <a href="https://chat.meatspac.es">https://chat.meatspac.es</a>
 </h2>
 
+<p>Note: due to laziness I'm serving the bookmarklet off an S3 bucket: <strong>meatvox.s3.amazonaws.com</strong>.</p>
+
 <h3>
 <a name="instructions" class="anchor" href="#instructions"><span class="octicon octicon-link"></span></a>Instructions:</h3>
 
 <ol>
 <li>create a bookmarklet with the following contents:
 <code>
-javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://meatvox.com/meatvox.js';})();
+javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://meatvox.s3.amazonaws.com/meatvox.js';})();
 </code>
 </li>
 <li>load chat.meatspac.es</li>
@@ -46,11 +48,28 @@ javascript:(function(){document.body.appendChild(document.createElement('script'
 </ol><h3>
 <a name="etc" class="anchor" href="#etc"><span class="octicon octicon-link"></span></a>Etc.</h3>
 
-<p>Wat: This is a straightforward application of <a href="https://github.com/kripken" class="user-mention">@kripken</a>'s <a href="https://github.com/kripken/speak.js">speak.js</a>, which is an emscripten port of a C++ TTS library to JS. The underlying TTS library is <a href="http://espeak.sourceforge.net/">eSpeak</a>.</p>
+<h4>
+<a name="wat" class="anchor" href="#wat"><span class="octicon octicon-link"></span></a>Wat:</h4>
 
-<p>About hosting: the code is just a few static JS files, so S3 seemed like the simplest possible solution. I made use of <a href="http://shlomoswidler.com/2009/08/amazon-s3-gotcha-using-virtual-host.html">this blog post</a> to get going.</p>
+<p>This is a straightforward application of <a href="https://github.com/kripken" class="user-mention">@kripken</a>'s <a href="https://github.com/kripken/speak.js">speak.js</a>, which is an emscripten port of a C++ TTS library to JS. The underlying TTS library is <a href="http://espeak.sourceforge.net/">eSpeak</a>.</p>
 
-<p>PRs welcome. My code is Apache 2. eVoice portions are GPL'd.</p>
+<h4>
+<a name="about-hosting" class="anchor" href="#about-hosting"><span class="octicon octicon-link"></span></a>About hosting:</h4>
+
+<p>The code is just a few static JS files, so S3 seemed like the simplest possible solution. I could setup a server with a proper SSL cert and all that, but laziness is next to godliness--it's the cardinal virtue of a good programmer (IMO).</p>
+
+<h4>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License?</h4>
+
+<p>My code is Apache 2. eVoice portions are GPL'd.</p>
+
+<h4>
+<a name="release-process" class="anchor" href="#release-process"><span class="octicon octicon-link"></span></a>Release process</h4>
+
+<ul>
+<li><p>JS files updated? Manually upload to S3 + re-enable permissions so that 'Everybody' can view the file.</p></li>
+<li><p>README updated? Manually regenerate the gh-pages to pick up changes.</p></li>
+</ul>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/6a68">6a68</a></p>
