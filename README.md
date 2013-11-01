@@ -13,8 +13,20 @@ javascript:(function(){document.body.appendChild(document.createElement('script'
 
 ### Etc.
 
-Wat: This is a straightforward application of @kripken's [speak.js](https://github.com/kripken/speak.js), which is an emscripten port of a C++ TTS library to JS. The underlying TTS library is [eSpeak](http://espeak.sourceforge.net/).
+#### Wat:
 
-About hosting: the code is just a few static JS files, so S3 seemed like the simplest possible solution. I made use of [this blog post](http://shlomoswidler.com/2009/08/amazon-s3-gotcha-using-virtual-host.html) to get going.
+This is a straightforward application of @kripken's [speak.js](https://github.com/kripken/speak.js), which is an emscripten port of a C++ TTS library to JS. The underlying TTS library is [eSpeak](http://espeak.sourceforge.net/).
 
-PRs welcome. My code is Apache 2. eVoice portions are GPL'd.
+#### About hosting:
+
+The code is just a few static JS files, so S3 seemed like the simplest possible solution. I could setup a server with a proper SSL cert and all that, but laziness is next to godliness--it's the cardinal virtue of a good programmer (IMO).
+
+#### License?
+
+My code is Apache 2. eVoice portions are GPL'd.
+
+#### Release process
+
+* JS files updated? Manually upload to S3 + re-enable permissions so that 'Everybody' can view the file.
+
+* README updated? Manually regenerate the gh-pages to pick up changes.
