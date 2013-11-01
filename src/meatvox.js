@@ -19,7 +19,7 @@ var observer = new MutationObserver(function(mutations) {
   mutations.forEach(function(mutation) {
     // mutations fire when <li>s are removed, so guard against that.
     // multiple speakers collide, so just speak the 0th.
-    mutation.addedNodes && speak(mutation.addedNodes[0].querySelector('p').textContent);
+    mutation.addedNodes && speak(mutation.addedNodes[0].querySelector('p').textContent, {noWorker:true});
   });
 });
 observer.observe(document.querySelector('div.chats ul'), {childList: true});
