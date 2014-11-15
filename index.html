@@ -1,82 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
     <title>Meatvox by 6a68</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
+
+    <header>
+      <div class="container">
         <h1>Meatvox</h1>
-        <p>bookmarklet to speak the entries added to chat.meatspac.es</p>
+        <h2>bookmarklet to speak the entries added to chat.meatspac.es</h2>
 
-        <p class="view"><a href="https://github.com/6a68/meatvox">View the Project on GitHub <small>6a68/meatvox</small></a></p>
+        <section id="downloads">
+          <a href="https://github.com/6a68/meatvox/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/6a68/meatvox/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/6a68/meatvox" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
 
-
-        <ul>
-          <li><a href="https://github.com/6a68/meatvox/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/6a68/meatvox/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/6a68/meatvox">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
+    <div class="container">
+      <section id="main_content">
         <h2>
-<a name="meatvox-text-to-speech-for-httpschatmeatspaces" class="anchor" href="#meatvox-text-to-speech-for-httpschatmeatspaces"><span class="octicon octicon-link"></span></a>MEATVOX: Text-to-speech for <a href="https://chat.meatspac.es">https://chat.meatspac.es</a>
+<a id="meatvox-text-to-speech-for-httpschatmeatspaces" class="anchor" href="#meatvox-text-to-speech-for-httpschatmeatspaces" aria-hidden="true"><span class="octicon octicon-link"></span></a>MEATVOX: Text-to-speech for <a href="https://chat.meatspac.es">https://chat.meatspac.es</a>
 </h2>
 
 <p>Note: due to laziness I'm serving the bookmarklet off an S3 bucket: <strong>meatvox.s3.amazonaws.com</strong>.</p>
 
 <h3>
-<a name="instructions" class="anchor" href="#instructions"><span class="octicon octicon-link"></span></a>Instructions:</h3>
+<a id="instructions" class="anchor" href="#instructions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instructions:</h3>
 
 <ol>
-<li>create a bookmarklet with the following contents:
-<code>
-javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://meatvox.s3.amazonaws.com/meatvox.js';})();
-</code>
-</li>
+<li>create a bookmarklet with the following contents:</li>
+</ol>
+
+<pre><code>javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://meatvox.s3.amazonaws.com/meatvox.js';})();
+</code></pre>
+
+<ol>
 <li>load chat.meatspac.es</li>
 <li>when the page settles, click your button and behold roboty delight.</li>
-</ol><h3>
-<a name="etc" class="anchor" href="#etc"><span class="octicon octicon-link"></span></a>Etc.</h3>
+</ol>
+
+<h3>
+<a id="etc" class="anchor" href="#etc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Etc.</h3>
 
 <h4>
-<a name="wat" class="anchor" href="#wat"><span class="octicon octicon-link"></span></a>Wat:</h4>
+<a id="wat" class="anchor" href="#wat" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wat:</h4>
 
 <p>This is a straightforward application of <a href="https://github.com/kripken" class="user-mention">@kripken</a>'s <a href="https://github.com/kripken/speak.js">speak.js</a>, which is an emscripten port of a C++ TTS library to JS. The underlying TTS library is <a href="http://espeak.sourceforge.net/">eSpeak</a>.</p>
 
 <h4>
-<a name="about-hosting" class="anchor" href="#about-hosting"><span class="octicon octicon-link"></span></a>About hosting:</h4>
+<a id="about-hosting" class="anchor" href="#about-hosting" aria-hidden="true"><span class="octicon octicon-link"></span></a>About hosting:</h4>
 
 <p>The code is just a few static JS files, so S3 seemed like the simplest possible solution. I could setup a server with a proper SSL cert and all that, but laziness is next to godliness--it's the cardinal virtue of a good programmer (IMO).</p>
 
 <h4>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License?</h4>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License?</h4>
 
 <p>My code is Apache 2. eVoice portions are GPL'd.</p>
 
 <h4>
-<a name="release-process" class="anchor" href="#release-process"><span class="octicon octicon-link"></span></a>Release process</h4>
+<a id="release-process" class="anchor" href="#release-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release process</h4>
 
 <ul>
 <li><p>JS files updated? Manually upload to S3 + re-enable permissions so that 'Everybody' can view the file.</p></li>
 <li><p>README updated? Manually regenerate the gh-pages to pick up changes.</p></li>
 </ul>
       </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/6a68">6a68</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-32602307-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
