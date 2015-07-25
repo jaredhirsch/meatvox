@@ -1,5 +1,8 @@
 ## MEATVOX: Text-to-speech for https://chat.meatspac.es
 
+_This project has been deactivated: it's no longer served off of S3._
+
+
 Note: due to laziness I'm serving the bookmarklet off an S3 bucket: **meatvox.s3.amazonaws.com**.
 
 ### Instructions:
